@@ -1,0 +1,18 @@
+[Unit]
+Description=Discord bot for reporting the office temperature from Govee-Scan
+After=network.target
+
+[Service]
+# User that will run the script (standard is root or your username)
+User=root
+# Full path to the directory containing your script
+WorkingDirectory=/home/mterry/git/govee-bot
+# Command to start the script using full paths
+ExecStart=/usr/bin/python3 /home/mterry/git/govee-bot/bot.py
+# Restart the service automatically if it crashes
+Restart=always
+
+[Install]
+# Ensures the service starts during the boot process
+WantedBy=multi-user.target
+
